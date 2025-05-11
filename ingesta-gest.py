@@ -5,11 +5,11 @@ from psycopg2 import sql
 import os
 
 db_config = {
-    'host': os.getenv('localhost'),
-    'user': os.getenv('postgres'),
-    'password': os.getenv('postgres'),
-    'database': os.getenv('tarea-db'),
-    'port': os.getenv('5432')
+    'host': os.getenv('DB_HOST', 'localhost'),
+    'user': os.getenv('DB_USER', 'postgres'),
+    'password': os.getenv('DB_PASSWORD', 'postgres'),
+    'database': os.getenv('DB_NAME', 'tarea-db'),
+    'port': int(os.getenv('DB_PORT', '5432'))
 }
 
 nombreBucket = "tarea-ingesta02"
