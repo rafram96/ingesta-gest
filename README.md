@@ -20,7 +20,7 @@ docker run -e DB_HOST=mi-servidor \
            -e DB_PASSWORD=contraseña \
            -e DB_NAME=mi_db \
            -e DB_PORT=5432 \
-           nombre-de-tu-imagen
+           nombre-imagen
 ```
 
 ### Opción 2: Usando un archivo .env
@@ -38,7 +38,7 @@ DB_PORT=5432
 Y luego ejecuta:
 
 ```bash
-docker run --env-file .env nombre-de-tu-imagen
+docker run --env-file .env nombre-imagen
 ```
 
 ### Opción 3: En docker-compose.yml
@@ -47,7 +47,7 @@ docker run --env-file .env nombre-de-tu-imagen
 version: '3'
 services:
   app:
-    image: nombre-de-tu-imagen
+    image: nombre-imagen
     environment:
       - DB_HOST=mi-servidor
       - DB_USER=usuario
@@ -55,8 +55,3 @@ services:
       - DB_NAME=mi_db
       - DB_PORT=5432
 ```
-
-## Notas importantes
-
-- Asegúrate de no incluir estas variables con valores reales en tu control de versiones
-- Considera usar Docker secrets para información sensible en ambientes de producción
