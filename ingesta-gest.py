@@ -139,7 +139,7 @@ def process_table(conn, table_name, db_columns, file_columns=None):
         save_to_csv(data, file_columns, temp_file.name)
         
         # Subir a S3
-        s3_key = f"{S3_PREFIX}/{table_name}_{TIMESTAMP}.csv"
+        s3_key = f"{S3_PREFIX}/{table_name}.csv"
         upload_to_s3(temp_file.name, s3_key)
         
         # Eliminar archivo temporal
